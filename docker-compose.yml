@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  kotlinapp:
+    container_name: kotlinapp
+    image: misty/kotlinapp:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DB_URL: 'jdbc:h2:mem:./data/company_db'
+        PG_USER: 'sa'
+        PG_PASSWORD: ''
+    ports:
+      - "8080:8080"

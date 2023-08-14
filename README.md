@@ -28,8 +28,16 @@ Open Postman and try to call method according to openapi.yml.
 
 For example, GET http://localhost:8080/company
 
+# Docker
+Not necessary. The app can run without docker
+
+1. docker-compose up
+2. docker build -t company-api .
+3. docker run -p 8080:8080 company-api
+
+
 # Extra question
 
-When talking about serverless, i think of AWS Lambda or Fargate. And there can be other supported services such as Amazon API Gateway for front end and RDS for relational database
+When talking about serverless, i think of AWS Lambda or Fargate. I think I will choose Lambda for its simplicity, scalability and cost-efficiency. Fargate would be for more complex orchestration. And there can be other supported services such as Amazon API Gateway for front end and RDS for relational database
 
-I think we need to pay attention to CORS and security (only specific user can access the server). And since Lambda is stateless, we need to use RDS for database
+I think we need to pay attention to CORS and security (only specific user can access the server). And since Lambda is stateless, we need to use RDS for database. Need to also consider setting up API Gateway to manage API endpoints. 
